@@ -22,26 +22,26 @@ st.markdown("""
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f1419;
-            color: #fff;
+            background-color: #0c0f15;
+            color: #e8ecf1;
         }
         
         .main {
             padding: 0;
-            background-color: #0f1419;
+            background-color: #0c0f15;
         }
         
         .stApp {
-            background-color: #0f1419;
+            background-color: #0c0f15;
         }
         
         .header-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #5b7dff 0%, #6d4bdc 100%);
             color: white;
             padding: 50px 30px;
             margin: -20px -20px 40px -20px;
             border-radius: 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
         }
         
         .header-title {
@@ -49,74 +49,77 @@ st.markdown("""
             font-weight: 800;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
+            color: #ffffff;
         }
         
         .header-subtitle {
             font-size: 1.2em;
-            opacity: 0.95;
+            opacity: 0.98;
             font-weight: 300;
+            color: rgba(255,255,255,0.95);
         }
         
         .metric-card {
-            background: #1a1f2e;
+            background: #151b28;
             padding: 20px;
             border-radius: 12px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            border-left: 4px solid #5b7dff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
             margin-bottom: 15px;
-            color: #fff;
+            color: #e8ecf1;
         }
         
         .stMetric {
-            background-color: #1a1f2e !important;
+            background-color: #151b28 !important;
             padding: 15px !important;
             border-radius: 10px !important;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+            border-left: 4px solid #5b7dff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
         }
         
         .stMetric label {
-            color: #a0aec0 !important;
+            color: #7fa3ff !important;
             font-size: 0.85em !important;
+            font-weight: 700 !important;
         }
         
         .stMetric [data-testid="metricDeltaContainer"] {
-            color: #667eea !important;
+            color: #5b7dff !important;
         }
         
         .filter-section {
-            background: #1a1f2e;
+            background: #151b28;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
             margin-bottom: 30px;
-            border-top: 3px solid #667eea;
+            border-top: 3px solid #5b7dff;
         }
         
         .account-card {
-            background: #1a1f2e;
+            background: #151b28;
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+            border-left: 4px solid #5b7dff;
             transition: all 0.3s ease;
         }
         
         .account-card:hover {
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 24px rgba(91, 125, 255, 0.3);
             transform: translateY(-2px);
-            background: #232a3a;
+            background: #1b2536;
         }
         
         .account-card.churn {
-            border-left: 4px solid #ff9800;
+            border-left: 4px solid #ff8c42;
         }
         
         .account-header {
             font-size: 1.4em;
             font-weight: 700;
-            color: #fff;
+            color: #ffffff;
             margin-bottom: 15px;
         }
         
@@ -132,96 +135,101 @@ st.markdown("""
         }
         
         .status-growing {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4caf50;
-            border: 1px solid rgba(76, 175, 80, 0.4);
+            background: rgba(76, 175, 80, 0.25);
+            color: #5fdb5f;
+            border: 1.5px solid #5fdb5f;
         }
         
         .status-flat {
-            background: rgba(255, 193, 7, 0.2);
-            color: #ffc107;
-            border: 1px solid rgba(255, 193, 7, 0.4);
+            background: rgba(255, 193, 7, 0.25);
+            color: #ffde59;
+            border: 1.5px solid #ffde59;
         }
         
         .status-declining {
-            background: rgba(255, 152, 0, 0.2);
-            color: #ff9800;
-            border: 1px solid rgba(255, 152, 0, 0.4);
+            background: rgba(255, 140, 66, 0.25);
+            color: #ff8c42;
+            border: 1.5px solid #ff8c42;
         }
         
         .pain-points-box {
-            background: rgba(255, 193, 7, 0.1);
+            background: rgba(255, 222, 89, 0.12);
             padding: 18px;
             border-radius: 10px;
             margin: 15px 0;
-            border-left: 4px solid #ffc107;
-            color: #fff;
+            border-left: 4px solid #ffde59;
+            color: #e8ecf1;
         }
         
         .sales-pitch-box {
-            background: rgba(102, 126, 234, 0.1);
+            background: rgba(91, 125, 255, 0.12);
             padding: 18px;
             border-radius: 10px;
             margin: 15px 0;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #5b7dff;
             font-size: 0.95em;
             line-height: 1.7;
-            color: #fff;
+            color: #e8ecf1;
         }
         
         .mini-metric {
-            background: #232a3a;
+            background: #1b2536;
             padding: 16px;
             border-radius: 10px;
             text-align: center;
-            border: 1px solid #2d3546;
-            color: #fff;
+            border: 1px solid #2d3954;
+            color: #e8ecf1;
             transition: all 0.2s ease;
         }
         
         .mini-metric:hover {
-            background: #2d3546;
-            border-color: #667eea;
+            background: #232e42;
+            border-color: #5b7dff;
+            box-shadow: 0 0 8px rgba(91, 125, 255, 0.3);
         }
         
         .mini-metric-label {
             font-size: 0.75em;
-            color: #8892b0;
+            color: #7fa3ff;
             text-transform: uppercase;
             margin-bottom: 8px;
             letter-spacing: 0.5px;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .mini-metric-value {
             font-size: 1.3em;
             font-weight: 700;
-            color: #fff;
+            color: #ffffff;
         }
         
         h2 {
-            color: #fff;
+            color: #ffffff;
             margin: 40px 0 25px 0;
             padding-bottom: 12px;
-            border-bottom: 2px solid #667eea;
+            border-bottom: 2px solid #5b7dff;
             font-size: 1.9em;
             font-weight: 700;
         }
         
         h3 {
-            color: #667eea;
+            color: #7fa3ff;
             margin: 20px 0 15px 0;
             font-size: 1.2em;
             font-weight: 600;
         }
         
         .stMultiSelect, .stSelectbox, .stTextInput, .stSlider {
-            color: #fff !important;
+            color: #e8ecf1 !important;
         }
         
         .stMultiSelect label, .stSelectbox label, .stTextInput label, .stSlider label {
-            color: #a0aec0 !important;
-            font-weight: 600;
+            color: #7fa3ff !important;
+            font-weight: 700 !important;
+        }
+        
+        .stDataFrame {
+            background-color: #151b28 !important;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -393,10 +401,17 @@ with col1:
         values="Count",
         names="Status",
         color="Status",
-        color_discrete_map={"Growing": "#4caf50", "Flat": "#ffc107", "Declining": "#ff9800"},
+        color_discrete_map={"Growing": "#5fdb5f", "Flat": "#ffde59", "Declining": "#ff8c42"},
         hole=0.35
     )
-    fig.update_traces(textposition='inside', textinfo='label+percent')
+    fig.update_traces(textposition='inside', textinfo='label+percent', textfont=dict(size=14, color='#000000', family='Arial Black'))
+    fig.update_layout(
+        paper_bgcolor='#0c0f15',
+        plot_bgcolor='#0c0f15',
+        font=dict(color='#e8ecf1', size=12),
+        showlegend=True,
+        legend=dict(x=0.7, y=0.95, bgcolor='rgba(21,27,40,0.8)', bordercolor='#5b7dff', borderwidth=1)
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
@@ -411,10 +426,19 @@ with col2:
         x="Status",
         y="Revenue",
         color="Status",
-        color_discrete_map={"Growing": "#4caf50", "Flat": "#ffc107", "Declining": "#ff9800"},
+        color_discrete_map={"Growing": "#5fdb5f", "Flat": "#ffde59", "Declining": "#ff8c42"},
         text="Revenue"
     )
-    fig.update_traces(texttemplate='₹%{y/1000000:.1f}Cr', textposition='outside')
+    fig.update_traces(texttemplate='₹%{y/1000000:.1f}Cr', textposition='outside', textfont=dict(size=12, color='#ffffff'))
+    fig.update_layout(
+        paper_bgcolor='#0c0f15',
+        plot_bgcolor='#0c0f15',
+        font=dict(color='#e8ecf1', size=12),
+        xaxis=dict(showgrid=False, color='#7fa3ff'),
+        yaxis=dict(showgrid=True, gridcolor='#2d3954', color='#7fa3ff'),
+        showlegend=False,
+        hovermode='x unified'
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
@@ -632,8 +656,8 @@ st.divider()
 
 # === FOOTER ===
 st.markdown("""
-    <div style='text-align: center; color: #5a6f7d; font-size: 11px; padding: 30px 20px;'>
-        <p style='margin-bottom: 8px;'>Sales Intelligence Engine | Powered by Streamlit | Last Updated: March 2026</p>
-        <p>InfoEdge (India) Ltd. - Naukri | IIMJobs | Hirist</p>
+    <div style='text-align: center; color: #7fa3ff; font-size: 12px; padding: 30px 20px; border-top: 1px solid #2d3954;'>
+        <p style='margin-bottom: 8px; color: #e8ecf1;'>Sales Intelligence Engine | Powered by Streamlit | Last Updated: March 2026</p>
+        <p style='color: #7fa3ff;'>InfoEdge (India) Ltd. - Naukri | IIMJobs | Hirist</p>
     </div>
 """, unsafe_allow_html=True)
