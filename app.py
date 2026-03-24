@@ -387,6 +387,94 @@ with col2:
 
 st.divider()
 
+# === HELPER FUNCTION (Define before using) ===
+def display_account_card(account, is_churn=False):
+    card_class = "account-card churn" if is_churn else "account-card"
+    
+    st.markdown(f"""
+        <div class='{card_class}'>
+            <div class='account-header'>
+                {account['companyName']} ({account['customerId']})
+                <span class='status-badge status-{account['status'].lower()}'>{account['status']}</span>
+            </div>
+    """, unsafe_allow_html=True)
+    
+    # Key metrics in grid
+    metric_col1, metric_col2, metric_col3, metric_col4, metric_col5 = st.columns(5)
+    
+    with metric_col1:
+        st.markdown(f"""
+            <div class='mini-metric'>
+                <div class='mini-metric-label'>Sector</div>
+                <div class='mini-metric-value'>{account['sector']}</div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with metric_col2:
+        st.markdown(f"""
+            <div class='mini-metric'>
+                <div class='mini-metric-label'>ACM</div>
+                <div class='mini-metric-value' style='font-size: 0.9em;'>{account['acmName']}</div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with metric_col3:
+        st.markdown(f"""
+            <div class='mini-metric'>
+                <div class='mini-metric-label'>Days to Renewal</div>
+                <div class='mini-metric-value'>{account['daysToRenewal']}</div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with metric_col4:
+        growth_color = "green" if account['growthPercentage'] >= 0 else "red"
+        st.markdown(f"""
+            <div class='mini-metric'>
+                <div class='mini-metric-label'>Growth %</div>
+                <div class='mini-metric-value' style='color: {growth_color};'>{account['growthPercentage']}%</div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with metric_col5:
+        st.markdown(f"""
+            <div class='mini-metric'>
+                <div class='mini-metric-label'>Current Revenue</div>
+                <div class='mini-metric-value' style='font-size: 0.95em;'>₹{account['currentFyRevenue']/100000:.1f}L</div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    # Pain points
+    st.markdown(f"""
+        <div class='pain-points-box'>
+            <strong>🔴 Pain Points:</strong><br>
+            {'<br>'.join([f'• {p}' for p in account['painPoints']])}
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Sales pitch
+    st.markdown(f"""
+        <div class='sales-pitch-box'>
+            <strong>💡 Sales Pitch:</strong><br>
+            {account['salesPitch']}
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Product health data table
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("<strong>📦 Product Health & Utilization</strong>")
+        product_df = pd.DataFrame(account['productHealth'])
+        st.dataframe(product_df, use_container_width=True, hide_index=True)
+    
+    with col2:
+        st.markdown("<strong>🎯 Top Premium Jobs</strong>")
+        jobs_df = pd.DataFrame(account['topJobs'])
+        st.dataframe(jobs_df, use_container_width=True, hide_index=True)
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("")
+
 # === FILTERS ===
 st.markdown("<h2>🔍 Smart Filters & Search</h2>", unsafe_allow_html=True)
 
@@ -517,91 +605,3 @@ st.markdown("""
         <p>InfoEdge (India) Ltd. - Naukri | IIMJobs | Hirist</p>
     </div>
 """, unsafe_allow_html=True)
-
-# === HELPER FUNCTION ===
-def display_account_card(account, is_churn=False):
-    card_class = "account-card churn" if is_churn else "account-card"
-    
-    st.markdown(f"""
-        <div class='{card_class}'>
-            <div class='account-header'>
-                {account['companyName']} ({account['customerId']})
-                <span class='status-badge status-{account['status'].lower()}'>{account['status']}</span>
-            </div>
-    """, unsafe_allow_html=True)
-    
-    # Key metrics in grid
-    metric_col1, metric_col2, metric_col3, metric_col4, metric_col5 = st.columns(5)
-    
-    with metric_col1:
-        st.markdown(f"""
-            <div class='mini-metric'>
-                <div class='mini-metric-label'>Sector</div>
-                <div class='mini-metric-value'>{account['sector']}</div>
-            </div>
-        """, unsafe_allow_html=True)
-    
-    with metric_col2:
-        st.markdown(f"""
-            <div class='mini-metric'>
-                <div class='mini-metric-label'>ACM</div>
-                <div class='mini-metric-value' style='font-size: 0.9em;'>{account['acmName']}</div>
-            </div>
-        """, unsafe_allow_html=True)
-    
-    with metric_col3:
-        st.markdown(f"""
-            <div class='mini-metric'>
-                <div class='mini-metric-label'>Days to Renewal</div>
-                <div class='mini-metric-value'>{account['daysToRenewal']}</div>
-            </div>
-        """, unsafe_allow_html=True)
-    
-    with metric_col4:
-        growth_color = "green" if account['growthPercentage'] >= 0 else "red"
-        st.markdown(f"""
-            <div class='mini-metric'>
-                <div class='mini-metric-label'>Growth %</div>
-                <div class='mini-metric-value' style='color: {growth_color};'>{account['growthPercentage']}%</div>
-            </div>
-        """, unsafe_allow_html=True)
-    
-    with metric_col5:
-        st.markdown(f"""
-            <div class='mini-metric'>
-                <div class='mini-metric-label'>Current Revenue</div>
-                <div class='mini-metric-value' style='font-size: 0.95em;'>₹{account['currentFyRevenue']/100000:.1f}L</div>
-            </div>
-        """, unsafe_allow_html=True)
-    
-    # Pain points
-    st.markdown(f"""
-        <div class='pain-points-box'>
-            <strong>🔴 Pain Points:</strong><br>
-            {'<br>'.join([f'• {p}' for p in account['painPoints']])}
-        </div>
-    """, unsafe_allow_html=True)
-    
-    # Sales pitch
-    st.markdown(f"""
-        <div class='sales-pitch-box'>
-            <strong>💡 Sales Pitch:</strong><br>
-            {account['salesPitch']}
-        </div>
-    """, unsafe_allow_html=True)
-    
-    # Product health data table
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("<strong>📦 Product Health & Utilization</strong>")
-        product_df = pd.DataFrame(account['productHealth'])
-        st.dataframe(product_df, use_container_width=True, hide_index=True)
-    
-    with col2:
-        st.markdown("<strong>🎯 Top Premium Jobs</strong>")
-        jobs_df = pd.DataFrame(account['topJobs'])
-        st.dataframe(jobs_df, use_container_width=True, hide_index=True)
-    
-    st.markdown("</div>", unsafe_allow_html=True)
-    st.markdown("")
