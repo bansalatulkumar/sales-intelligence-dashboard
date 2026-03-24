@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Intelligence Dashboard - InfoEdge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">📊 Sales Intelligence Dashboard</div>
+            <div class="subtitle">InfoEdge - Naukri | IIMJobs | Hirist</div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" onclick="showSection('dashboard')">Dashboard</button>
+            <button class="nav-btn" onclick="showSection('topAccounts')">Top Accounts</button>
+            <button class="nav-btn" onclick="showSection('churnRisk')">Churn Risk</button>
+            <button class="nav-btn" onclick="showSection('accountDetail')">Account Details</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <h2>Executive Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <div class="card-label">Total Accounts</div>
+                        <div class="card-value" id="totalAccounts">100</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-label">Total Revenue</div>
+                        <div class="card-value" id="totalRevenue">₹1.57Cr</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-label">Avg Revenue/Account</div>
+                        <div class="card-value" id="avgRevenue">₹1.57L</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-label">High Value Accounts</div>
+                        <div class="card-value" id="highValue">10</div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Account Health Distribution</h3>
+                        <div class="health-chart">
+                            <div class="health-bar">
+                                <div class="health-growing" style="width: 45%;" title="Growing: 45 accounts">Growing (45)</div>
+                                <div class="health-flat" style="width: 30%;" title="Flat: 30 accounts">Flat (30)</div>
+                                <div class="health-declining" style="width: 25%;" title="Declining: 25 accounts">Declining (25)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Sector Distribution</h3>
+                        <div class="sector-list">
+                            <div class="sector">IT Services - 30 accounts</div>
+                            <div class="sector">Startup - 25 accounts</div>
+                            <div class="sector">BFSI - 20 accounts</div>
+                            <div class="sector">Product - 15 accounts</div>
+                            <div class="sector">Other - 10 accounts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-insights">
+                    <h3>🔍 Key Insights</h3>
+                    <ul>
+                        <li><strong>45% accounts are growing</strong> - Strong market momentum but 25% at risk of declining</li>
+                        <li><strong>₹1.57 Cr total revenue</strong> - Average ₹1.57L/account shows large base of SME accounts</li>
+                        <li><strong>High-value accounts concentrated</strong> - Top 10 accounts drive 40%+ of revenue</li>
+                        <li><strong>Churn risk in declining segment</strong> - 10 accounts in critical renewal stage</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Top Accounts Section -->
+            <section id="topAccounts" class="section">
+                <h2>Top 10 High-Value Accounts</h2>
+                <div id="topAccountsList" class="accounts-list">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Churn Risk Section -->
+            <section id="churnRisk" class="section">
+                <h2>⚠️ Top 10 Churn Risk Accounts</h2>
+                <div id="churnRiskList" class="accounts-list">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Account Detail Section -->
+            <section id="accountDetail" class="section">
+                <h2>Account Detail View</h2>
+                <div class="account-detail-container">
+                    <input type="number" id="accountIdInput" placeholder="Enter Account ID" min="1" max="100">
+                    <button onclick="loadAccountDetail()">Load Account</button>
+                </div>
+                <div id="accountDetailContent" class="account-detail">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Sales Intelligence Engine | Last Updated: March 2026 | Data powered by InfoEdge Analytics</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
