@@ -22,174 +22,206 @@ st.markdown("""
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f7fa;
+            background-color: #0f1419;
+            color: #fff;
         }
         
         .main {
             padding: 0;
+            background-color: #0f1419;
+        }
+        
+        .stApp {
+            background-color: #0f1419;
         }
         
         .header-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 40px 20px;
-            margin-bottom: 30px;
+            padding: 50px 30px;
+            margin: -20px -20px 40px -20px;
             border-radius: 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
         
         .header-title {
-            font-size: 2.5em;
-            font-weight: 700;
+            font-size: 3em;
+            font-weight: 800;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
         
         .header-subtitle {
-            font-size: 1.1em;
-            opacity: 0.9;
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
         }
         
         .metric-card {
-            background: white;
+            background: #1a1f2e;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             border-left: 4px solid #667eea;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .stMetric {
+            background-color: #1a1f2e !important;
+            padding: 15px !important;
+            border-radius: 10px !important;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+        }
+        
+        .stMetric label {
+            color: #a0aec0 !important;
+            font-size: 0.85em !important;
+        }
+        
+        .stMetric [data-testid="metricDeltaContainer"] {
+            color: #667eea !important;
         }
         
         .filter-section {
-            background: white;
+            background: #1a1f2e;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             margin-bottom: 30px;
             border-top: 3px solid #667eea;
         }
         
         .account-card {
-            background: white;
-            padding: 25px;
+            background: #1a1f2e;
+            padding: 30px;
             border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
             border-left: 4px solid #667eea;
             transition: all 0.3s ease;
         }
         
         .account-card:hover {
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
             transform: translateY(-2px);
+            background: #232a3a;
         }
         
         .account-card.churn {
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid #ff9800;
         }
         
         .account-header {
-            font-size: 1.3em;
+            font-size: 1.4em;
             font-weight: 700;
-            color: #333;
+            color: #fff;
             margin-bottom: 15px;
         }
         
         .status-badge {
             display: inline-block;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85em;
-            font-weight: 600;
+            font-weight: 700;
             margin-right: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .status-growing {
-            background: #d4edda;
-            color: #155724;
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.4);
         }
         
         .status-flat {
-            background: #fff3cd;
-            color: #856404;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.4);
         }
         
         .status-declining {
-            background: #f8d7da;
-            color: #721c24;
+            background: rgba(255, 152, 0, 0.2);
+            color: #ff9800;
+            border: 1px solid rgba(255, 152, 0, 0.4);
         }
         
         .pain-points-box {
-            background: #fff3cd;
-            padding: 15px;
-            border-radius: 8px;
+            background: rgba(255, 193, 7, 0.1);
+            padding: 18px;
+            border-radius: 10px;
             margin: 15px 0;
             border-left: 4px solid #ffc107;
+            color: #fff;
         }
         
         .sales-pitch-box {
-            background: #e7f3ff;
-            padding: 15px;
-            border-radius: 8px;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 18px;
+            border-radius: 10px;
             margin: 15px 0;
             border-left: 4px solid #667eea;
             font-size: 0.95em;
-            line-height: 1.6;
-        }
-        
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 15px 0;
+            line-height: 1.7;
+            color: #fff;
         }
         
         .mini-metric {
-            background: #f8f9ff;
-            padding: 12px;
-            border-radius: 8px;
+            background: #232a3a;
+            padding: 16px;
+            border-radius: 10px;
             text-align: center;
-            border: 1px solid #e0e6ff;
+            border: 1px solid #2d3546;
+            color: #fff;
+            transition: all 0.2s ease;
+        }
+        
+        .mini-metric:hover {
+            background: #2d3546;
+            border-color: #667eea;
         }
         
         .mini-metric-label {
-            font-size: 0.8em;
-            color: #666;
+            font-size: 0.75em;
+            color: #8892b0;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
         
         .mini-metric-value {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: 700;
-            color: #333;
-        }
-        
-        .summary-section {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-        
-        .insight-box {
-            background: #f8f9ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            border-left: 4px solid #667eea;
+            color: #fff;
         }
         
         h2 {
-            color: #333;
-            margin: 30px 0 20px 0;
-            padding-bottom: 10px;
+            color: #fff;
+            margin: 40px 0 25px 0;
+            padding-bottom: 12px;
             border-bottom: 2px solid #667eea;
-            font-size: 1.8em;
+            font-size: 1.9em;
+            font-weight: 700;
         }
         
         h3 {
             color: #667eea;
-            margin: 15px 0 10px 0;
-            font-size: 1.1em;
+            margin: 20px 0 15px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .stMultiSelect, .stSelectbox, .stTextInput, .stSlider {
+            color: #fff !important;
+        }
+        
+        .stMultiSelect label, .stSelectbox label, .stTextInput label, .stSlider label {
+            color: #a0aec0 !important;
+            font-weight: 600;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -361,7 +393,7 @@ with col1:
         values="Count",
         names="Status",
         color="Status",
-        color_discrete_map={"Growing": "#00b386", "Flat": "#ffc107", "Declining": "#ff6b6b"},
+        color_discrete_map={"Growing": "#4caf50", "Flat": "#ffc107", "Declining": "#ff9800"},
         hole=0.35
     )
     fig.update_traces(textposition='inside', textinfo='label+percent')
@@ -379,7 +411,7 @@ with col2:
         x="Status",
         y="Revenue",
         color="Status",
-        color_discrete_map={"Growing": "#00b386", "Flat": "#ffc107", "Declining": "#ff6b6b"},
+        color_discrete_map={"Growing": "#4caf50", "Flat": "#ffc107", "Declining": "#ff9800"},
         text="Revenue"
     )
     fig.update_traces(texttemplate='₹%{y/1000000:.1f}Cr', textposition='outside')
@@ -600,8 +632,8 @@ st.divider()
 
 # === FOOTER ===
 st.markdown("""
-    <div style='text-align: center; color: #999; font-size: 12px; padding: 20px;'>
-        <p>Sales Intelligence Engine | Powered by Streamlit | Last Updated: March 2026</p>
+    <div style='text-align: center; color: #5a6f7d; font-size: 11px; padding: 30px 20px;'>
+        <p style='margin-bottom: 8px;'>Sales Intelligence Engine | Powered by Streamlit | Last Updated: March 2026</p>
         <p>InfoEdge (India) Ltd. - Naukri | IIMJobs | Hirist</p>
     </div>
 """, unsafe_allow_html=True)
